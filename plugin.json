@@ -2,12 +2,12 @@
   "name": "unify_2_1",
   "version": "1.0.0",
   "description": "Comprehensive Unify 2.1 data migration plugin with multi-agent orchestration, PySpark development, and Azure DevOps integration for medallion architecture ETL pipelines",
-  "author": "Unify Development Team",
+  "author": "Linus McMananey",
   "license": "MIT",
-  "homepage": "https://github.com/your-org/unify_2_1_plugin",
+  "homepage": "https://github.com/linus-mcmanamey/unify_2_1_plugin",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-org/unify_2_1_plugin.git"
+    "url": "https://github.com/linus-mcmanamey/unify_2_1_plugin.git"
   },
   "keywords": [
     "pyspark",
