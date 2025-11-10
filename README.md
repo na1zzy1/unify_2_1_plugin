@@ -9,7 +9,7 @@ This plugin provides a complete development framework for the Unify 2.1 data mig
 - **16 Specialized Agents** - Multi-agent orchestration with Chain of Verification
 - **30 Slash Commands** - Complete workflow automation
 - **9 Skills** - On-demand knowledge loading for detailed technical guidance
-- **3 Hooks** - Custom workflow integrations
+- **3 Hooks** - Intelligent prompt interception with automatic skill activation and orchestrator routing
 
 ## Key Features
 
@@ -54,45 +54,19 @@ cp -r .claude/plugins/repos/unify_2_1 ~/.claude/plugins/repos/
 
 ### Quick Start
 
-1. **Run the interactive UI**:
-   ```bash
-   make ui
-   ```
-
-2. **Execute a slash command**:
+1. **Execute a slash command**:
    ```
    /orchestrate "Create a PySpark ETL pipeline for customer data"
    ```
 
-3. **Launch a specialized agent**:
+2. **Launch a specialized agent**:
    ```
    /code-review python_files/silver/cms/
    ```
 
-### Basic Workflows
+# Agents
 
-**Full Pipeline Execution**:
-```bash
-make run_all  # Bronze → Silver → Gold → DuckDB
-```
-
-**Layer-Specific Execution**:
-```bash
-make bronze      # Bronze layer only
-make run_silver  # Silver layer only
-make gold        # Gold layer only
-```
-
-**Quality Gates** (mandatory before commit):
-```bash
-python3 -m py_compile <file>  # Syntax check
-ruff check python_files/       # Linting
-ruff format python_files/      # Formatting
-```
-
-## Agents
-
-### Phase 1: Core Development Agents
+## Phase 1: Core Development Agents
 
 **developer-pyspark** - PySpark ETL development for Azure Synapse
 - Metrics: dataframes_created, tables_written, rows_processed
@@ -106,7 +80,7 @@ ruff format python_files/      # Formatting
 - Metrics: test_cases_added, assertions_added, coverage_percentage
 - Use for: Unit tests, integration tests, data validation
 
-### Phase 2: Specialized Technical Agents
+## Specialised Technical Agents
 
 **developer-python** - Advanced Python development
 - Metrics: decorators_added, async_functions_added, type_hints_added
@@ -124,7 +98,7 @@ ruff format python_files/      # Formatting
 - Metrics: bottlenecks_identified, optimizations_applied, performance_improvement_percentage
 - Use for: Performance bottlenecks, load testing
 
-### Phase 3: Supporting Agents
+## Supporting Agents
 
 **git-manager** - Azure DevOps git workflow specialist
 - Metrics: branches_created, prs_created, commits_made
@@ -142,7 +116,7 @@ ruff format python_files/      # Formatting
 - Metrics: scripts_created, error_handlers_added, posix_compliance
 - Use for: Deployment scripts, automation
 
-### Phase 4: Planning & Architecture Agents
+## Planning & Architecture Agents
 
 **product-manager** - Product planning and feature specifications
 - Metrics: user_personas_created, user_stories_created, features_defined
@@ -315,12 +289,40 @@ Use skill: skill-creator
 
 ## Hooks
 
-**skill-activation-prompt** - Provides contextual skill recommendations
+This plugin provides a **dual-stage hook pipeline** that intelligently routes prompts:
 
-The hook automatically suggests relevant skills based on user queries:
-- Detects when detailed knowledge would be helpful
-- Recommends specific skills to load
+### 1. skill-activation-prompt
+Detects domain-specific needs and recommends skills to load:
+- Matches keywords and intent patterns from `skill-rules.json`
+- Recommends critical, high, medium, or low priority skills
 - Prevents context pollution by loading only when needed
+
+### 2. orchestrator-interceptor
+Analyzes complexity and routes to optimal execution strategy:
+- Classifies prompts: Simple Query | Moderate Task | Complex Task | High Complexity
+- Provides upfront cost estimates ($0.002 - $0.129 USD)
+- Routes complex tasks through master-orchestrator agent
+- Presents execution plan with user approval workflow
+
+### 3. combined-prompt-hook
+Chains both hooks seamlessly:
+- Runs skill-activation first (domain knowledge)
+- Runs orchestrator-interceptor second (execution strategy)
+- Merges outputs into unified context injection
+- Fail-safe design (errors don't block prompts)
+
+**Example Flow**:
+```
+User: "Fix linting across bronze, silver, and gold layers"
+  ↓
+Skill Hook: Load project-architecture, pyspark-patterns
+  ↓
+Orchestrator: High complexity, 6-8 agents, $0.129 USD
+  ↓
+Claude: Presents execution plan for user approval
+```
+
+See `hooks/README.md` for detailed documentation, configuration, and testing.
 
 ## Configuration
 

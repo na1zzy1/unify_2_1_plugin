@@ -78,7 +78,9 @@
       "skill-creator"
     ],
     "hooks": [
-      "skill-activation-prompt"
+      "skill-activation-prompt",
+      "orchestrator-interceptor",
+      "combined-prompt-hook"
     ]
   },
   "requirements": {
