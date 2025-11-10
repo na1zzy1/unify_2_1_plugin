@@ -7,7 +7,7 @@ A comprehensive Claude Code plugin for PySpark data engineering with Azure Synap
 This plugin provides a complete development framework for the Unify 2.1 data migration project, including:
 
 - **16 Specialized Agents** - Multi-agent orchestration with Chain of Verification
-- **30 Slash Commands** - Complete workflow automation
+- **28 Slash Commands** - Complete workflow automation
 - **9 Skills** - On-demand knowledge loading for detailed technical guidance
 - **3 Hooks** - Intelligent prompt interception with automatic skill activation and orchestrator routing
 
@@ -21,24 +21,6 @@ Coordinate 2-8 specialized agents in parallel, sequential, or hybrid workflows:
 - **Chain of Verification** - Systematic validation strategy (Primary Task → Generate Output → Identify Weaknesses → Cite Evidence → Revise)
 - **JSON Communication Protocol** - Standardized agent responses with role-specific metrics
 - **Quality Gates** - Mandatory syntax, linting, formatting, and testing validation
-
-### PySpark Development
-
-Medallion architecture ETL pipelines for Azure Synapse Analytics:
-
-- **Bronze Layer** - Raw parquet ingestion
-- **Silver Layer** - Validated, standardized data
-- **Gold Layer** - Business-ready analytics
-- **Core Utilities** - SparkOptimiser, NotebookLogger, TableUtilities
-
-### Azure DevOps Integration
-
-Complete Azure DevOps workflow support:
-
-- User story analysis and deployment planning
-- CI/CD pipeline creation with PowerShell
-- Pull request management and code review
-- Work item tracking and sprint planning
 
 ## Installation
 
@@ -136,6 +118,24 @@ cp -r .claude/plugins/repos/unify_2_1 ~/.claude/plugins/repos/
 
 ## Commands
 
+### Context Optimization (Start Here!)
+
+**/prime-claude** [--analyze-only] | [--backup] | [--apply] - Optimize CLAUDE.md for efficiency
+```
+/prime-claude --analyze-only    # See what would be optimized
+/prime-claude --backup --apply  # Distill CLAUDE.md, create skills
+```
+
+**What it does**: Reduces CLAUDE.md from 400+ lines to ~100 lines (80-90% context savings) by moving detailed knowledge into on-demand skills. Transforms "always-loaded" documentation into "load-when-needed" skills for faster responses and more room for actual work.
+
+**Benefits**:
+- Save 10,000+ tokens per conversation
+- Faster Claude responses
+- More context space for your work
+- Better organized knowledge in focused skills
+
+---
+
 ### Orchestration Commands
 
 **/orchestrate** [user-prompt] - Orchestrate multiple agents in parallel
@@ -143,9 +143,9 @@ cp -r .claude/plugins/repos/unify_2_1 ~/.claude/plugins/repos/
 /orchestrate "Optimize the customer ETL pipeline for performance"
 ```
 
-**/aa_command** [task-description] - Discuss multi-agent workflow strategy
+**/multi-agent** [task-description] - Discuss multi-agent workflow strategy
 ```
-/aa_command "Plan deployment strategy for new gold layer tables"
+/multi-agent "Plan deployment strategy for new gold layer tables"
 ```
 
 **/background** [user-prompt] - Fire off agent in background
@@ -175,6 +175,21 @@ cp -r .claude/plugins/repos/unify_2_1 ~/.claude/plugins/repos/
 /create-feature customer_segmentation
 ```
 
+**/explain-code** [file-path] - Explain code functionality and architecture
+```
+/explain-code python_files/utilities/session_optimiser.py
+```
+
+**/refactor-code** [file-path] - Refactor code for better quality
+```
+/refactor-code python_files/gold/g_customer_analytics.py
+```
+
+**/pyspark-errors** - Diagnose and fix common PySpark errors
+```
+/pyspark-errors
+```
+
 ### Documentation Commands
 
 **/update-docs** [doc-type] - Generate documentation and sync to Azure wiki
@@ -183,17 +198,17 @@ cp -r .claude/plugins/repos/unify_2_1 ~/.claude/plugins/repos/
 /update-docs --sync-to-wiki
 ```
 
-**/update-docs-test** [test-type] - Test documentation generation
-```
-/update-docs-test --test-local
-```
-
 **/create-prd** [feature-name] - Create Product Requirements Document
 ```
 /create-prd audit_logging_feature
 ```
 
-### Git & Deployment Commands
+### Azure DevOps & Git Commands
+
+**/my-devops-tasks** - Retrieve all assigned Azure DevOps work items
+```
+/my-devops-tasks
+```
 
 **/local-commit** [message] - Create well-formatted commits
 ```
@@ -205,9 +220,14 @@ cp -r .claude/plugins/repos/unify_2_1 ~/.claude/plugins/repos/
 /pr-feature-to-staging
 ```
 
-**/commit-and-pr** [commit-message] - Commit and create PR in one step
+**/pr-staging-to-develop** - Create PR from staging to develop
 ```
-/commit-and-pr "Implement customer analytics gold layer"
+/pr-staging-to-develop
+```
+
+**/pr-fix-pr-review** [PR_ID] - Address PR review feedback
+```
+/pr-fix-pr-review 12345
 ```
 
 **/pr-deploy-workflow** [commit-message] - Complete deployment workflow
@@ -215,26 +235,21 @@ cp -r .claude/plugins/repos/unify_2_1 ~/.claude/plugins/repos/
 /pr-deploy-workflow "Deploy customer segmentation to production"
 ```
 
-**/branch-cleanup** - Clean up merged branches
+**/branch-cleanup** [--dry-run] | [--force] - Clean up merged branches
 ```
 /branch-cleanup --dry-run
 ```
 
 ### Monitoring & Performance Commands
 
-**/add-performance-monitoring** [monitoring-type] - Setup APM
+**/performance-monitoring** [monitoring-type] - Setup application performance monitoring
 ```
-/add-performance-monitoring --apm
+/performance-monitoring --apm
 ```
 
-**/setup-docker-containers** [environment-type] - Setup Docker
+**/setup-docker-containers** [environment-type] - Setup Docker containerization
 ```
 /setup-docker-containers --development
-```
-
-**/workflow-orchestrator** [workflow-name] - Complex automation workflows
-```
-/workflow-orchestrator create deployment-pipeline
 ```
 
 ## Skills
