@@ -2,13 +2,14 @@
   "name": "unify_2_1",
   "version": "1.0.0",
   "description": "Comprehensive Unify 2.1 data migration plugin with multi-agent orchestration, PySpark development, and Azure DevOps integration for medallion architecture ETL pipelines",
-  "author": "Linus McMananey",
+  "author": {
+    "name": "Linus McMananey",
+    "email": "linus.mcmanamey@example.com",
+    "url": "https://github.com/linus-mcmanamey"
+  },
   "license": "MIT",
   "homepage": "https://github.com/linus-mcmanamey/unify_2_1_plugin",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/linus-mcmanamey/unify_2_1_plugin.git"
-  },
+  "repository": "https://github.com/linus-mcmanamey/unify_2_1_plugin.git",
   "keywords": [
     "pyspark",
     "azure",
@@ -18,77 +19,25 @@
     "data-engineering",
     "orchestration",
     "multi-agent",
-    "devops"
+    "devops",
+    "hooks",
+    "intelligent-routing"
   ],
+  "category": "data-engineering",
+  "tags": ["enterprise", "azure", "pyspark", "etl", "orchestration"],
+  "commands": "./commands",
+  "agents": "./agents",
+  "skills": "./skills",
+  "hooks": "./hooks",
   "capabilities": {
     "commands": 28,
     "agents": 16,
     "skills": 9,
     "hooks": 3
   },
-  "components": {
-    "commands": [
-      "prime-claude",
-      "multi-agent",
-      "orchestrate",
-      "background",
-      "write-tests",
-      "code-review",
-      "describe",
-      "create-feature",
-      "explain-code",
-      "refactor-code",
-      "pyspark-errors",
-      "update-docs",
-      "create-prd",
-      "my-devops-tasks",
-      "local-commit",
-      "pr-feature-to-staging",
-      "pr-staging-to-develop",
-      "pr-fix-pr-review",
-      "pr-deploy-workflow",
-      "pr-review",
-      "create-pr",
-      "create-pull-request",
-      "branch-cleanup",
-      "performance-monitoring",
-      "setup-docker-containers",
-      "dev-agent",
-      "ultra-think"
-    ],
-    "agents": [
-      "master-orchestrator",
-      "developer-pyspark",
-      "code-reviewer",
-      "test-engineer",
-      "developer-python",
-      "developer-sql",
-      "developer-azure-engineer",
-      "performance-engineer",
-      "git-manager",
-      "code-documenter",
-      "powershell-test-engineer",
-      "developer-bash-shell",
-      "business-analyst",
-      "product-manager",
-      "system-architect",
-      "security-analyst"
-    ],
-    "skills": [
-      "azure-devops",
-      "mcp-code-execution",
-      "multi-agent-orchestration",
-      "project-architecture",
-      "project-commands",
-      "pyspark-patterns",
-      "schema-reference",
-      "skill-creator"
-    ],
-    "hooks": [
-      "skill-activation-prompt",
-      "orchestrator-interceptor",
-      "combined-prompt-hook"
-    ]
+  "engines": {
+    "claude-code": ">=1.0.0",
+    "node": ">=18.0.0"
   },
   "requirements": {
     "claude_code": ">=1.0.0",
@@ -102,6 +51,13 @@
       "agents": 16,
       "execution_patterns": ["parallel", "sequential", "hybrid"]
     },
+    "intelligent_hooks": {
+      "enabled": true,
+      "description": "Dual-stage prompt routing with automatic skill activation and complexity-based orchestration",
+      "cost_estimation": true,
+      "automatic_routing": true,
+      "hooks": ["skill-activation-prompt", "orchestrator-interceptor", "combined-prompt-hook"]
+    },
     "pyspark_development": {
       "enabled": true,
       "description": "PySpark ETL development for Azure Synapse medallion architecture",
@@ -111,7 +67,8 @@
     "azure_devops_integration": {
       "enabled": true,
       "description": "Work item analysis, pipeline creation, PR management",
-      "capabilities": ["user_story_analysis", "deployment_planning", "ci_cd_pipelines"]
+      "capabilities": ["user_story_analysis", "deployment_planning", "ci_cd_pipelines"],
+      "mcp_integration": true
     },
     "quality_gates": {
       "enabled": true,
@@ -136,13 +93,76 @@
       "type_hints": "mandatory",
       "docstrings": "on_request_only",
       "blank_lines_in_functions": false
+    },
+    "quality_tools": {
+      "linting": "ruff",
+      "formatting": "ruff format",
+      "syntax_check": "python3 -m py_compile",
+      "testing": "pytest"
     }
   },
   "documentation": {
     "readme": "README.md",
+    "installation": "INSTALLATION.md",
+    "marketplace": "MARKETPLACE.md",
     "getting_started": "README.md#getting-started",
     "agent_reference": "README.md#agents",
     "command_reference": "README.md#commands",
-    "skill_reference": "README.md#skills"
+    "skill_reference": "README.md#skills",
+    "hook_reference": "hooks/README.md"
+  },
+  "metadata": {
+    "plugin_type": "enterprise-data-engineering",
+    "target_audience": ["data-engineers", "pyspark-developers", "azure-engineers"],
+    "complexity_level": "advanced",
+    "installation_time": "5-10 minutes",
+    "learning_curve": "moderate-to-advanced"
+  },
+  "integrations": {
+    "azure_services": ["Azure Synapse Analytics", "Azure DevOps", "Azure Key Vault", "Azure Storage"],
+    "mcp_servers": ["azure-devops"],
+    "external_tools": ["DuckDB", "PowerShell", "Git"]
+  },
+  "components_detail": {
+    "commands": {
+      "count": 28,
+      "categories": {
+        "orchestration": ["orchestrate", "background", "multi-agent"],
+        "code_quality": ["code-review", "describe", "write-tests"],
+        "git_operations": ["local-commit", "pr-feature-to-staging", "pr-staging-to-develop", "pr-fix-pr-review", "pr-deploy-workflow", "branch-cleanup"],
+        "development": ["create-feature", "create-prd", "explain-code", "refactor-code", "pyspark-errors"],
+        "documentation": ["update-docs"],
+        "devops": ["my-devops-tasks", "performance-monitoring", "setup-docker-containers"],
+        "utilities": ["prime-claude", "dev-agent", "ultra-think"]
+      }
+    },
+    "agents": {
+      "count": 16,
+      "specializations": {
+        "development": ["developer-pyspark", "developer-python", "developer-sql", "developer-azure-engineer", "developer-bash-shell"],
+        "quality": ["code-reviewer", "test-engineer", "powershell-test-engineer"],
+        "operations": ["git-manager", "performance-engineer"],
+        "documentation": ["code-documenter"],
+        "planning": ["business-analyst", "product-manager", "system-architect"],
+        "security": ["security-analyst"],
+        "orchestration": ["master-orchestrator"]
+      }
+    },
+    "skills": {
+      "count": 9,
+      "categories": {
+        "project_specific": ["project-architecture", "project-commands", "pyspark-patterns", "schema-reference"],
+        "integration": ["azure-devops", "mcp-code-execution"],
+        "orchestration": ["multi-agent-orchestration"],
+        "utilities": ["skill-creator", "auto-code-review-gate"]
+      }
+    },
+    "hooks": {
+      "count": 3,
+      "types": {
+        "routing": ["orchestrator-interceptor", "combined-prompt-hook"],
+        "skill_management": ["skill-activation-prompt"]
+      }
+    }
   }
 }
