@@ -1,7 +1,7 @@
 {
   "name": "unify_2_1",
-  "version": "1.0.0",
-  "description": "Comprehensive Unify 2.1 data migration plugin with multi-agent orchestration, PySpark development, and Azure DevOps integration for medallion architecture ETL pipelines",
+  "version": "1.1.0",
+  "description": "Comprehensive Unify 2.1 data migration plugin with multi-agent orchestration, pure Python hooks, PySpark development, and Azure DevOps integration for medallion architecture ETL pipelines. Zero bash/Node.js dependencies.",
   "author": {
     "name": "Linus McMananey",
     "email": "linus.mcmanamey@gmail.com",

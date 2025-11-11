@@ -1,8 +1,8 @@
 {
   "name": "unify-data-engineering-marketplace",
   "metadata": {
-    "description": "Enterprise-grade PySpark data engineering plugin with multi-agent orchestration, intelligent hooks, and Azure Synapse integration",
-    "version": "1.0.0",
+    "description": "Enterprise-grade PySpark data engineering plugin with multi-agent orchestration, pure Python intelligent hooks, and Azure Synapse integration. Zero dependencies on bash/Node.js.",
+    "version": "1.1.0",
     "pluginRoot": "."
   },
   "owner": {
@@ -14,8 +14,8 @@
     {
       "name": "unify_2_1",
       "source": "./",
-      "description": "Comprehensive Unify 2.1 data migration plugin with multi-agent orchestration, PySpark development, and Azure DevOps integration for medallion architecture ETL pipelines",
-      "version": "1.0.0",
+      "description": "Comprehensive Unify 2.1 data migration plugin with multi-agent orchestration, pure Python hooks, PySpark development, and Azure DevOps integration for medallion architecture ETL pipelines. Zero bash/Node.js dependencies.",
+      "version": "1.1.0",
       "author": {
         "name": "Linus McMananey"
       },
