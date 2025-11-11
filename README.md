@@ -22,6 +22,31 @@ Coordinate 2-8 specialized agents in parallel, sequential, or hybrid workflows:
 - **JSON Communication Protocol** - Standardized agent responses with role-specific metrics
 - **Quality Gates** - Mandatory syntax, linting, formatting, and testing validation
 
+## Installation
+
+### Quick Install via Marketplace
+
+```bash
+# Add this marketplace
+/plugin marketplace add linus-mcmanamey/unify_2_1_plugin
+
+# Install the plugin
+/plugin install unify_2_1
+```
+
+See [MARKETPLACE.md](MARKETPLACE.md) for alternative installation methods and marketplace submission status.
+
+### Manual Installation
+
+```bash
+# Clone to Claude Code plugins directory
+git clone https://github.com/linus-mcmanamey/unify_2_1_plugin.git ~/.claude/plugins/repos/unify_2_1
+
+# Configure hooks in ~/.claude/settings.json
+```
+
+See [INSTALLATION.md](INSTALLATION.md) for detailed setup instructions.
+
 
 
 # Agents
